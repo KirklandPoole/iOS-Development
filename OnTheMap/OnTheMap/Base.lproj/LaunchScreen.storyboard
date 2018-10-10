@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="udacity" translatesAutoresizingMaskIntoConstraints="NO" id="iMH-8C-EMb">
+                                <rect key="frame" x="172" y="172" width="256" height="256"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="iMH-8C-EMb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="CID-Mx-17W"/>
+                            <constraint firstItem="iMH-8C-EMb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="152" id="EE0-m6-Ncf"/>
+                            <constraint firstItem="iMH-8C-EMb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="J1z-Wf-78c"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="iMH-8C-EMb" secondAttribute="bottom" constant="335" id="V62-rf-sjW"/>
+                            <constraint firstItem="iMH-8C-EMb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jYF-cg-9X9"/>
+                            <constraint firstItem="iMH-8C-EMb" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="9" id="kgP-TL-LqZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iMH-8C-EMb" secondAttribute="trailing" constant="149" id="lb8-uO-cut"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CID-Mx-17W"/>
+                                <exclude reference="EE0-m6-Ncf"/>
+                                <exclude reference="kgP-TL-LqZ"/>
+                                <exclude reference="lb8-uO-cut"/>
+                                <exclude reference="V62-rf-sjW"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="udacity" width="256" height="256"/>
+    </resources>
+</document>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Automatic">
+    <entity name="DrawHistory" syncable="YES">
+        <attribute name="b1" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="b2" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="b3" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="b4" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="b5" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="bonusBall" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="drawDate" attributeType="Date" minDateTimeInterval="-274309260" defaultDateTimeInterval="-274309260" syncable="YES"/>
+        <attribute name="drawHistoryId" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="gameId" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="jackpotAmount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="drawHistoryToGame" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="gameToDrawHistory" inverseEntity="Game" syncable="YES"/>
+    </entity>
+    <entity name="Game" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="bonusBallsInGame" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="bonusBallsInGameMaximum" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="gameId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="gameName" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="regularBallsInGame" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="regularBallsInGameMaximum" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="gameToDrawHistory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DrawHistory" inverseName="drawHistoryToGame" inverseEntity="DrawHistory" syncable="YES"/>
+        <relationship name="gameToPrizeValue" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PrizeValue" inverseName="prizeValueToGame" inverseEntity="PrizeValue" syncable="YES"/>
+        <relationship name="gameToTicket" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ticket" inverseName="ticketToGame" inverseEntity="Ticket" syncable="YES"/>
+    </entity>
+    <entity name="Movie" representedClassName=".Movie" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="posterPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="releaseDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="actor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="movies" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName=".Person" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="movies" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Movie" inverseName="actor" inverseEntity="Movie" syncable="YES"/>
+    </entity>
+    <entity name="PrizeValue" syncable="YES">
+        <attribute name="bonusBallsMatched" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="gameId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="prizeLevelValue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="prizeValueId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="standardBallsMatched" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="prizeValueToGame" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="gameToPrizeValue" inverseEntity="Game" syncable="YES"/>
+    </entity>
+    <entity name="Ticket" syncable="YES">
+        <attribute name="b1" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="b2" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="b3" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="b4" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="b5" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="bonusBall" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="drawDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="drawHistoryId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="gameId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="ticketId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="ticketToGame" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="gameToTicket" inverseEntity="Game" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DrawHistory" positionX="-9" positionY="-18" width="128" height="210"/>
+        <element name="Game" positionX="-2" positionY="-279" width="128" height="193"/>
+        <element name="Movie" positionX="126" positionY="-126" width="128" height="120"/>
+        <element name="Person" positionX="135" positionY="-117" width="128" height="105"/>
+        <element name="PrizeValue" positionX="241" positionY="90" width="128" height="135"/>
+        <element name="Ticket" positionX="268" positionY="-198" width="128" height="210"/>
+    </elements>
+</model>
